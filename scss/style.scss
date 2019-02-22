@@ -1,3 +1,26 @@
+$font-body: 'Lato', sans-serif;
+
+$color-main: #2abbae;
+$color-dark: #333;
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -5,23 +28,31 @@
 }
 body {
 	background: #ededed;
-	font-family: 'Lato', sans-serif;
+	font-family: $font-body;
+    color: $color-dark;
+    max-width: 700px;
+    margin: 0 auto;
 }
-
-
-// ----- COLORS
-
-$main: #2abbae;
-$dark: #333;
 
 
 // ----- COMMON STYLES
 
+h1 {
+    color: $color-main;
+    margin-bottom: 20px;
+}
+h2 {
+    margin-bottom: 10px;
+}
 p {
-	color: $dark;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 a {
-	color: $main;
+	color: $color-main;
 
     &:hover {
         color: grey;
@@ -31,4 +62,22 @@ a {
         -webkit-transition:.5s;
         transition:.5s;
     }
+}
+
+// ----- LAYOUT
+
+header {
+    background: $color-main;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    h1 {
+        color: #fff;
+        margin: 0;
+    }
+}
+.hlt {
+    background: tint($color-main, 50%);
+    margin-bottom: 20px;
+    padding: 20px;
 }

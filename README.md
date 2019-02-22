@@ -1,2 +1,2 @@
-# sass-test
-A project for testing sass and compiling with node-sass
+# SASS-test
+Et prosjekt for å lære sass, og compiling med node-sass.
