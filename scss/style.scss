@@ -29,6 +29,7 @@ $color-dark: #333;
 body {
 	background: #ededed;
 	font-family: $font-body;
+    line-height: 1.6em;
     color: $color-dark;
     max-width: 700px;
     margin: 0 auto;
@@ -62,6 +63,13 @@ a {
         -webkit-transition:.5s;
         transition:.5s;
     }
+}
+code.inline {
+    border: solid 1px #dbdbdb;
+    padding: 4px 4px 1px;
+    background: #ffffff;
+    font-size: 14px;
+    border-radius: 3px;
 }
 
 // ----- LAYOUT
